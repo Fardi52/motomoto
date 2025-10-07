@@ -187,8 +187,8 @@ const v = 'v=1'; // анти-кэш для обновления модели
 (async () => {
   try {
     model = await tmImage.load(
-	`model/model.json?${v}`, 
-	`model/metadata.json?${v}`
+	`./model/model.json?${v}`, 
+	`./model/metadata.json?${v}`
 );
     statusEl.textContent = 'Модель загружена. Выберите файл или запустите камеру.';
   } catch (e) {
@@ -300,4 +300,5 @@ addEventListener('beforeunload', () => {
   if (raf) cancelAnimationFrame(raf);
   if (webcam) webcam.stop();
 });
+
 </script>
